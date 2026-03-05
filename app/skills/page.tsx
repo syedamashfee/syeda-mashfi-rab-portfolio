@@ -1,33 +1,105 @@
-import type { Metadata } from "next";
+﻿import type { Metadata } from "next";
 import SkillCard from "@/components/SkillCard";
 
 export const metadata: Metadata = {
   title: "Skills",
   description:
-    "Skills in banking operations, programming, SQL, networking, and technical support.",
+    "Comprehensive skills of Syeda Mashfi Rab across banking, technology, analytics, product, and professional competencies.",
 };
 
 const skillGroups = [
   {
-    category: "Banking & Finance",
+    category: "Banking & Financial Basics",
     skills: [
-      "Banking operations",
-      "KYC compliance",
-      "Digital banking systems",
-      "Financial documentation",
+      "Banking operations (basic)",
+      "KYC and compliance awareness",
+      "Financial documentation handling",
+      "Transaction process understanding",
+      "Digital banking systems familiarity",
     ],
   },
   {
-    category: "Programming",
-    skills: ["Python", "JavaScript", "C", "C++"],
+    category: "Programming & Technical Foundation",
+    skills: [
+      "Python (fundamentals)",
+      "JavaScript (fundamentals)",
+      "C",
+      "C++",
+      "SQL (basic)",
+      "Database fundamentals",
+      "System troubleshooting",
+      "Networking basics",
+      "Digital system familiarity",
+    ],
   },
   {
-    category: "Technical Skills",
+    category: "Web Development",
     skills: [
-      "SQL",
-      "Database fundamentals",
-      "Networking basics",
-      "System troubleshooting",
+      "HTML",
+      "CSS",
+      "JavaScript",
+      "React (basic)",
+      "Bootstrap",
+    ],
+  },
+  {
+    category: "Databases & Data Handling",
+    skills: [
+      "MySQL",
+      "Firebase (basic)",
+      "MS Excel (data analysis and reporting)",
+      "Data handling in Google Sheets",
+      "Data validation",
+      "Record maintenance",
+      "MIS basics",
+    ],
+  },
+  {
+    category: "Product Skills",
+    skills: [
+      "User research",
+      "Roadmapping",
+      "Agile methodology",
+      "Feature prioritization",
+      "MVP planning",
+      "Customer support orientation",
+    ],
+  },
+  {
+    category: "Tools & Workflow",
+    skills: [
+      "Git",
+      "GitHub",
+      "VS Code",
+      "Google Colab",
+      "Canva",
+      "Notion",
+      "Jira",
+      "Trello",
+      "Figma (basic)",
+      "Miro (basic)",
+      "Google Analytics (basic)",
+    ],
+  },
+  {
+    category: "Analytical Skills",
+    skills: [
+      "Market research",
+      "Data analysis",
+      "Reporting",
+      "Data standardization",
+      "Problem solving",
+    ],
+  },
+  {
+    category: "Professional Competencies",
+    skills: [
+      "Communication skills",
+      "Team collaboration",
+      "Teamwork",
+      "Adaptability",
+      "Time management",
+      "Customer service orientation",
     ],
   },
 ];
@@ -38,8 +110,8 @@ export default function SkillsPage() {
       <div className="site-container">
         <h1 className="section-title">Skills</h1>
         <p className="section-subtitle">
-          A balanced profile combining banking domain knowledge with programming
-          and technical infrastructure fundamentals.
+          Full skill set combining banking knowledge, technical foundations,
+          product thinking, analytics, and workplace competencies.
         </p>
         <div className="mt-6 grid gap-5 md:grid-cols-2 xl:grid-cols-3">
           {skillGroups.map((group) => (

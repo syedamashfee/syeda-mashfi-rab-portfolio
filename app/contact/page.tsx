@@ -1,10 +1,10 @@
-import type { Metadata } from "next";
+﻿import type { Metadata } from "next";
 import ContactForm from "@/components/ContactForm";
 
 export const metadata: Metadata = {
   title: "Contact",
   description:
-    "Contact Syeda Mashfee for digital banking, fintech, and technology opportunities.",
+    "Contact Syeda Mashfi Rab for product, software, and technology opportunities.",
 };
 
 export default function ContactPage() {
@@ -14,7 +14,7 @@ export default function ContactPage() {
         <h1 className="section-title">Contact</h1>
         <p className="section-subtitle">
           Open to internships, entry-level roles, and collaborative
-          opportunities in banking technology and fintech.
+          opportunities in product and technology.
         </p>
         <div className="mt-6 grid gap-5 lg:grid-cols-[0.95fr_1.05fr]">
           <aside className="card p-6">
@@ -26,31 +26,33 @@ export default function ContactPage() {
                 <span className="font-semibold text-[var(--text)]">Email:</span>{" "}
                 <a
                   className="focus-ring rounded text-[var(--brand)] underline underline-offset-4"
-                  href="mailto:syeda.mashfee@example.com"
+                  href="mailto:syedamashfee@gmail.com"
                 >
-                  syeda.mashfee@example.com
+                  syedamashfee@gmail.com
                 </a>
+              </li>
+              <li>
+                <span className="font-semibold text-[var(--text)]">Phone:</span>{" "}
+                <a
+                  className="focus-ring rounded text-[var(--brand)] underline underline-offset-4"
+                  href="tel:+8801790446387"
+                >
+                  +8801790446387
+                </a>
+              </li>
+              <li>
+                <span className="font-semibold text-[var(--text)]">Location:</span>{" "}
+                Dhaka, Bangladesh
               </li>
               <li>
                 <span className="font-semibold text-[var(--text)]">LinkedIn:</span>{" "}
                 <a
                   className="focus-ring rounded text-[var(--brand)] underline underline-offset-4"
-                  href="https://linkedin.com/in/your-profile"
+                  href="https://linkedin.com/in/syeda-mashfee"
                   rel="noreferrer"
                   target="_blank"
                 >
-                  linkedin.com/in/your-profile
-                </a>
-              </li>
-              <li>
-                <span className="font-semibold text-[var(--text)]">GitHub:</span>{" "}
-                <a
-                  className="focus-ring rounded text-[var(--brand)] underline underline-offset-4"
-                  href="https://github.com/your-username"
-                  rel="noreferrer"
-                  target="_blank"
-                >
-                  github.com/your-username
+                  linkedin.com/in/syeda-mashfee
                 </a>
               </li>
             </ul>

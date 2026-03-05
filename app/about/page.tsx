@@ -1,9 +1,9 @@
-import type { Metadata } from "next";
+﻿import type { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: "About",
   description:
-    "Learn about Syeda Mashfee's background in banking operations, KYC, digital systems, and programming.",
+    "About Syeda Mashfi Rab: Computer Science background, product mindset, and technical experience in web apps, automation, and IT infrastructure.",
 };
 
 export default function AboutPage() {
@@ -12,27 +12,41 @@ export default function AboutPage() {
       <div className="site-container">
         <h1 className="section-title">About</h1>
         <p className="section-subtitle">
-          I am interested in the intersection of banking, technology, and
-          digital financial systems. My learning path combines practical banking
-          understanding with technical skills that support modern financial
-          innovation.
+          Aspiring product-focused technologist with a Computer Science
+          background and practical experience in web development, automation,
+          and infrastructure support.
         </p>
+
         <div className="card mt-6 p-6 md:p-8">
-          <h2 className="text-xl font-semibold text-[var(--brand)]">
-            Knowledge Areas
-          </h2>
-          <ul className="mt-4 space-y-2 text-[var(--muted)]">
-            <li>• Banking operations and financial service workflows</li>
-            <li>• KYC compliance and documentation awareness</li>
-            <li>• Digital banking systems and process understanding</li>
-            <li>• Database fundamentals and structured data handling</li>
-            <li>• Programming foundations for technical problem solving</li>
-          </ul>
-          <p className="mt-5 text-[var(--muted)]">
-            My goal is to contribute to digital banking innovation and fintech
-            solutions by combining operational clarity with technology-driven
-            execution.
+          <h2 className="text-xl font-semibold text-[var(--brand)]">Profile Summary</h2>
+          <p className="mt-4 text-[var(--muted)]">
+            Eager to contribute technical expertise, user empathy, and
+            problem-solving to digital product development and improvement.
           </p>
+        </div>
+
+        <div className="card mt-6 p-6 md:p-8">
+          <h2 className="text-xl font-semibold text-[var(--brand)]">Education</h2>
+          <ul className="mt-4 space-y-3 text-[var(--muted)]">
+            <li>
+              <span className="font-semibold text-[var(--text)]">
+                B.Sc. in Computer Science & Engineering
+              </span>{" "}
+              - Institute of Science and Technology (2020 - November 2025), GPA
+              3.52
+            </li>
+            <li>
+              Relevant coursework: Data Structures, Algorithms, OOP, Web
+              Development, AI
+            </li>
+            <li>
+              <span className="font-semibold text-[var(--text)]">
+                Higher Secondary Certificate
+              </span>{" "}
+              - Birshreshtha Noor Mohammad Public College, Dhaka (2019), GPA
+              4.83
+            </li>
+          </ul>
         </div>
       </div>
     </section>

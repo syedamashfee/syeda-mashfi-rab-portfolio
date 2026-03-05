@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
@@ -11,6 +11,8 @@ const navLinks = [
   { href: "/skills", label: "Skills" },
   { href: "/projects", label: "Projects" },
   { href: "/experience", label: "Experience" },
+  { href: "/certifications", label: "Certifications" },
+  { href: "/extracurricular", label: "Extracurricular" },
   { href: "/contact", label: "Contact" },
 ];
 
@@ -25,7 +27,7 @@ export default function Navbar() {
           className="focus-ring rounded text-base font-bold text-[var(--brand)]"
           href="/"
         >
-          Syeda Mashfee
+          Syeda Mashfi Rab
         </Link>
         <button
           aria-controls="mobile-nav"
@@ -36,7 +38,7 @@ export default function Navbar() {
         >
           Menu
         </button>
-        <div className="hidden items-center gap-3 md:flex">
+        <div className="hidden items-center gap-3 md:flex md:flex-wrap md:justify-end">
           {navLinks.map((link) => {
             const active = pathname === link.href;
             return (

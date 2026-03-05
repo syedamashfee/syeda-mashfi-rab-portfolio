@@ -1,17 +1,13 @@
-import Link from "next/link";
-
-type ProjectCardProps = {
+﻿type ProjectCardProps = {
   title: string;
   description: string;
   technologies: string[];
-  githubUrl: string;
 };
 
 export default function ProjectCard({
   title,
   description,
   technologies,
-  githubUrl,
 }: ProjectCardProps) {
   return (
     <article className="card flex h-full flex-col p-5">
@@ -26,16 +22,6 @@ export default function ProjectCard({
             {tech}
           </span>
         ))}
-      </div>
-      <div className="mt-5 pt-2">
-        <Link
-          className="focus-ring text-sm font-semibold text-[var(--brand)] underline underline-offset-4"
-          href={githubUrl}
-          rel="noreferrer"
-          target="_blank"
-        >
-          GitHub Repository
-        </Link>
       </div>
     </article>
   );

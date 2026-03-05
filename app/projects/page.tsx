@@ -1,40 +1,30 @@
-import type { Metadata } from "next";
+﻿import type { Metadata } from "next";
 import ProjectCard from "@/components/ProjectCard";
 
 export const metadata: Metadata = {
   title: "Projects",
   description:
-    "Portfolio projects covering digital banking, Python analysis, networking, and SQL use cases.",
+    "Projects by Syeda Mashfi Rab in automation, web development, and browser-based game engineering.",
 };
 
 const projects = [
   {
-    title: "Digital Banking Chatbot Prompt Design",
+    title: "Invoice Automation Bot for F-Commerce Clients",
     description:
-      "Designed structured prompts for a banking support chatbot to improve query handling quality and response consistency.",
-    technologies: ["Prompt Engineering", "Fintech", "Customer Support Design"],
-    githubUrl: "https://github.com/username/digital-banking-chatbot-prompts",
+      "Built a lightweight invoice management system using HTML and Google Sheets to automate monthly billing for 3 local clients, reducing manual effort by 60% and improving invoice accuracy.",
+    technologies: ["HTML", "Google Sheets", "Automation"],
   },
   {
-    title: "Banking Data Analysis with Python",
+    title: "Flappy Bird Clone (Academic Project)",
     description:
-      "Analyzed sample banking transaction data to identify trends, anomalies, and reporting insights.",
-    technologies: ["Python", "Pandas", "Data Visualization"],
-    githubUrl: "https://github.com/username/banking-data-analysis-python",
+      "Developed a browser-based Flappy Bird clone using JavaScript and HTML5 Canvas, optimized for 60+ FPS, and tested across major browsers. Reached over 500 users during internal launch/testing.",
+    technologies: ["JavaScript", "HTML5 Canvas", "Game Loop Optimization"],
   },
   {
-    title: "Network Configuration Lab (VLAN and IP addressing)",
+    title: "Responsive E-Commerce Website",
     description:
-      "Built a network lab scenario with VLAN segmentation and IP planning for secure and structured connectivity.",
-    technologies: ["Networking", "VLAN", "IP Addressing"],
-    githubUrl: "https://github.com/username/network-configuration-lab",
-  },
-  {
-    title: "SQL Banking Database Queries",
-    description:
-      "Created SQL queries for account, customer, and transaction datasets to support operational reporting.",
-    technologies: ["SQL", "Database", "Data Retrieval"],
-    githubUrl: "https://github.com/username/sql-banking-queries",
+      "Created a fully responsive online store using HTML, CSS, and JavaScript with a mobile-first UX and cross-device compatibility, achieving a 95+ Google Lighthouse performance score.",
+    technologies: ["HTML", "CSS", "JavaScript", "UX", "Lighthouse"],
   },
 ];
 
@@ -44,8 +34,8 @@ export default function ProjectsPage() {
       <div className="site-container">
         <h1 className="section-title">Projects</h1>
         <p className="section-subtitle">
-          Example project work aligned with digital banking, technology, and
-          problem-solving across data and infrastructure.
+          Practical projects focused on automation, user experience, and web
+          performance.
         </p>
         <div className="mt-6 grid gap-5 md:grid-cols-2">
           {projects.map((project) => (

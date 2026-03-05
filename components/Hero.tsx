@@ -1,4 +1,4 @@
-import Image from "next/image";
+﻿import Image from "next/image";
 import Link from "next/link";
 
 export default function Hero() {
@@ -10,15 +10,15 @@ export default function Hero() {
             Professional Portfolio
           </p>
           <h1 className="text-3xl font-bold leading-tight text-[var(--brand)] md:text-5xl">
-            Syeda Mashfee
+            Syeda Mashfi Rab
           </h1>
           <p className="mt-4 text-lg font-medium text-[var(--text)] md:text-xl">
-            Aspiring Digital Banking &amp; Technology Professional
+            Aspiring Product-Focused Technologist
           </p>
           <p className="mt-5 max-w-2xl text-[var(--muted)]">
-            Interested in digital banking systems, financial technology,
-            programming, and data analysis. Focused on building practical
-            solutions that improve digital financial experiences.
+            Computer Science graduate with hands-on experience in user-centric web
+            applications, automation, and IT infrastructure. Focused on building
+            impactful digital products with technical execution and user empathy.
           </p>
           <div className="mt-7 flex flex-wrap gap-3">
             <Link
@@ -29,9 +29,9 @@ export default function Hero() {
             </Link>
             <Link
               className="focus-ring rounded-md border border-[var(--brand)] px-4 py-2 text-sm font-semibold text-[var(--brand)] hover:bg-[var(--brand-soft)]"
-              href="/Syeda-Mashfee-CV.pdf"
+              href="/Syeda-Mashfi-Rab-Resume.pdf"
             >
-              Download CV
+              Download Resume
             </Link>
             <Link
               className="focus-ring rounded-md border px-4 py-2 text-sm font-semibold hover:bg-[var(--brand-soft)]"
@@ -44,7 +44,7 @@ export default function Hero() {
         <div className="mx-auto w-full max-w-xs">
           <div className="card p-3">
             <Image
-              alt="Syeda Mashfee profile placeholder"
+              alt="Syeda Mashfi Rab profile"
               className="h-auto w-full rounded-lg object-cover"
               height={620}
               priority
