@@ -1,5 +1,6 @@
-﻿"use client";
+"use client";
 
+import { AnimatePresence, motion } from "framer-motion";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useState } from "react";
@@ -21,74 +22,93 @@ export default function Navbar() {
   const [open, setOpen] = useState(false);
 
   return (
-    <header className="sticky top-0 z-30 border-b bg-[var(--surface)]/95 backdrop-blur">
-      <nav className="site-container flex min-h-16 items-center justify-between gap-4 py-2">
-        <Link
-          className="focus-ring rounded text-base font-bold text-[var(--brand)]"
-          href="/"
-        >
-          Syeda Mashfi Rab
+    <header className="sticky top-0 z-40 border-b border-[var(--border)] bg-[var(--surface)]/90 backdrop-blur-xl">
+      <nav className="site-container flex min-h-18 items-center justify-between gap-4 py-2">
+        <Link className="focus-ring rounded-md" href="/">
+          <span className="text-base font-semibold tracking-tight text-[var(--brand-strong)] md:text-lg">
+            Syeda Mashfi Rab
+          </span>
         </Link>
+
         <button
           aria-controls="mobile-nav"
           aria-expanded={open}
-          className="focus-ring rounded border px-3 py-2 text-sm md:hidden"
+          className="focus-ring btn btn-secondary md:hidden"
           onClick={() => setOpen((prev) => !prev)}
           type="button"
         >
-          Menu
+          {open ? "Close" : "Menu"}
         </button>
-        <div className="hidden items-center gap-3 md:flex md:flex-wrap md:justify-end">
+
+        <div className="hidden items-center gap-2 md:flex md:flex-wrap md:justify-end">
           {navLinks.map((link) => {
             const active = pathname === link.href;
             return (
               <Link
-                className={`focus-ring rounded px-2 py-1 text-sm font-medium ${
+                className={`focus-ring relative rounded-lg px-3 py-2 text-sm font-medium ${
                   active
-                    ? "text-[var(--brand)] underline underline-offset-4"
-                    : "text-[var(--muted)] hover:text-[var(--brand)]"
+                    ? "text-[var(--brand-strong)]"
+                    : "text-[var(--muted)] hover:text-[var(--brand-strong)]"
                 }`}
                 href={link.href}
                 key={link.href}
               >
                 {link.label}
+                {active ? (
+                  <motion.span
+                    className="absolute inset-x-1 -bottom-0.5 h-0.5 rounded-full bg-[var(--brand)]"
+                    layoutId="active-nav-link"
+                  />
+                ) : null}
               </Link>
             );
           })}
           <ThemeToggle />
         </div>
       </nav>
-      {open ? (
-        <div
-          className="site-container border-t pb-4 pt-2 md:hidden"
-          id="mobile-nav"
-          role="menu"
-        >
-          <div className="grid gap-1">
-            {navLinks.map((link) => {
-              const active = pathname === link.href;
-              return (
-                <Link
-                  className={`focus-ring rounded px-2 py-2 text-sm font-medium ${
-                    active
-                      ? "bg-[var(--brand-soft)] text-[var(--brand)]"
-                      : "text-[var(--muted)] hover:bg-[var(--brand-soft)] hover:text-[var(--brand)]"
-                  }`}
-                  href={link.href}
-                  key={link.href}
-                  onClick={() => setOpen(false)}
-                  role="menuitem"
-                >
-                  {link.label}
-                </Link>
-              );
-            })}
-            <div className="pt-1">
-              <ThemeToggle />
+
+      <AnimatePresence>
+        {open ? (
+          <motion.div
+            animate={{ opacity: 1, height: "auto" }}
+            className="site-container overflow-hidden border-t border-[var(--border)] pb-4 pt-2 md:hidden"
+            exit={{ opacity: 0, height: 0 }}
+            id="mobile-nav"
+            initial={{ opacity: 0, height: 0 }}
+            role="menu"
+          >
+            <div className="grid gap-1.5">
+              {navLinks.map((link, index) => {
+                const active = pathname === link.href;
+                return (
+                  <motion.div
+                    animate={{ opacity: 1, x: 0 }}
+                    initial={{ opacity: 0, x: -10 }}
+                    key={link.href}
+                    transition={{ delay: index * 0.03 }}
+                  >
+                    <Link
+                      className={`focus-ring rounded-lg px-3 py-2 text-sm font-medium ${
+                        active
+                          ? "bg-[var(--brand-soft)] text-[var(--brand-strong)]"
+                          : "text-[var(--muted)] hover:bg-[var(--brand-soft)] hover:text-[var(--brand-strong)]"
+                      }`}
+                      href={link.href}
+                      onClick={() => setOpen(false)}
+                      role="menuitem"
+                    >
+                      {link.label}
+                    </Link>
+                  </motion.div>
+                );
+              })}
+              <div className="pt-1">
+                <ThemeToggle />
+              </div>
             </div>
-          </div>
-        </div>
-      ) : null}
+          </motion.div>
+        ) : null}
+      </AnimatePresence>
     </header>
   );
 }

@@ -1,4 +1,5 @@
-﻿import type { Metadata } from "next";
+import type { Metadata } from "next";
+import Reveal from "@/components/Reveal";
 
 export const metadata: Metadata = {
   title: "Experience",
@@ -10,15 +11,17 @@ export default function ExperiencePage() {
   return (
     <section className="section">
       <div className="site-container">
-        <h1 className="section-title">Experience</h1>
-        <p className="section-subtitle">
-          Internship experience across infrastructure operations and management
-          information systems.
-        </p>
+        <Reveal>
+          <h1 className="section-title">Experience</h1>
+          <p className="section-subtitle">
+            Internship experience across infrastructure operations and management
+            information systems.
+          </p>
+        </Reveal>
 
         <div className="mt-6 grid gap-5">
-          <article className="card p-6 md:p-8">
-            <h2 className="text-xl font-semibold text-[var(--brand)]">
+          <Reveal className="card p-6 md:p-8" delay={0.05}>
+            <h2 className="text-xl font-semibold text-[var(--brand-strong)]">
               IT Infrastructure Intern
             </h2>
             <p className="mt-1 text-sm text-[var(--muted)]">
@@ -29,10 +32,10 @@ export default function ExperiencePage() {
               <li>Configured VLANs and IP addressing for secure connectivity.</li>
               <li>Contributed to ICT research and infrastructure documentation.</li>
             </ul>
-          </article>
+          </Reveal>
 
-          <article className="card p-6 md:p-8">
-            <h2 className="text-xl font-semibold text-[var(--brand)]">MIS Intern</h2>
+          <Reveal className="card p-6 md:p-8" delay={0.1}>
+            <h2 className="text-xl font-semibold text-[var(--brand-strong)]">MIS Intern</h2>
             <p className="mt-1 text-sm text-[var(--muted)]">
               Ostello India Pvt. Ltd. | June 2022 - October 2022
             </p>
@@ -43,7 +46,7 @@ export default function ExperiencePage() {
               </li>
               <li>Supported MIS documentation and data standardization workflows.</li>
             </ul>
-          </article>
+          </Reveal>
         </div>
       </div>
     </section>

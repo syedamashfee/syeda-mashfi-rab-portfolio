@@ -1,4 +1,5 @@
-﻿import type { Metadata } from "next";
+import type { Metadata } from "next";
+import Reveal from "@/components/Reveal";
 
 export const metadata: Metadata = {
   title: "Extracurricular",
@@ -17,18 +18,20 @@ export default function ExtracurricularPage() {
   return (
     <section className="section">
       <div className="site-container">
-        <h1 className="section-title">Extracurricular</h1>
-        <p className="section-subtitle">
-          Leadership and community involvement beyond formal academic and
-          professional work.
-        </p>
-        <article className="card mt-6 p-6 md:p-8">
+        <Reveal>
+          <h1 className="section-title">Extracurricular</h1>
+          <p className="section-subtitle">
+            Leadership and community involvement beyond formal academic and
+            professional work.
+          </p>
+        </Reveal>
+        <Reveal className="card mt-6 p-6 md:p-8" delay={0.06}>
           <ul className="list-disc space-y-3 pl-5 text-[var(--muted)]">
             {activities.map((item) => (
               <li key={item}>{item}</li>
             ))}
           </ul>
-        </article>
+        </Reveal>
       </div>
     </section>
   );

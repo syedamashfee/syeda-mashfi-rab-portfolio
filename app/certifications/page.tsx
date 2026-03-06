@@ -1,4 +1,5 @@
-﻿import type { Metadata } from "next";
+import type { Metadata } from "next";
+import Reveal from "@/components/Reveal";
 
 export const metadata: Metadata = {
   title: "Certifications",
@@ -21,18 +22,20 @@ export default function CertificationsPage() {
   return (
     <section className="section">
       <div className="site-container">
-        <h1 className="section-title">Certifications</h1>
-        <p className="section-subtitle">
-          Training programs completed across product, technical, and professional
-          development areas.
-        </p>
-        <article className="card mt-6 p-6 md:p-8">
+        <Reveal>
+          <h1 className="section-title">Certifications</h1>
+          <p className="section-subtitle">
+            Training programs completed across product, technical, and professional
+            development areas.
+          </p>
+        </Reveal>
+        <Reveal className="card mt-6 p-6 md:p-8" delay={0.06}>
           <ul className="list-disc space-y-3 pl-5 text-[var(--muted)]">
             {certifications.map((item) => (
               <li key={item}>{item}</li>
             ))}
           </ul>
-        </article>
+        </Reveal>
       </div>
     </section>
   );

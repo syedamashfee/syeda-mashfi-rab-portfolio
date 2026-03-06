@@ -1,5 +1,7 @@
-﻿import type { Metadata } from "next";
+import type { Metadata } from "next";
+import { Manrope, Space_Grotesk } from "next/font/google";
 import "./globals.css";
+import FloatingElements from "@/components/FloatingElements";
 import Footer from "@/components/Footer";
 import Navbar from "@/components/Navbar";
 
@@ -44,6 +46,16 @@ const themeScript = `
   document.documentElement.classList.toggle("dark", shouldUseDark);
 })();`;
 
+const bodyFont = Manrope({
+  subsets: ["latin"],
+  variable: "--font-body",
+});
+
+const displayFont = Space_Grotesk({
+  subsets: ["latin"],
+  variable: "--font-display",
+});
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -54,7 +66,8 @@ export default function RootLayout({
       <head>
         <script dangerouslySetInnerHTML={{ __html: themeScript }} />
       </head>
-      <body id="top">
+      <body className={`${bodyFont.variable} ${displayFont.variable}`} id="top">
+        <FloatingElements />
         <Navbar />
         <main>{children}</main>
         <Footer />

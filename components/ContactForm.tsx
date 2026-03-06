@@ -1,5 +1,6 @@
 "use client";
 
+import { motion } from "framer-motion";
 import { FormEvent, useState } from "react";
 
 export default function ContactForm() {
@@ -22,14 +23,22 @@ export default function ContactForm() {
   };
 
   return (
-    <form className="card p-6" noValidate onSubmit={handleSubmit}>
+    <motion.form
+      className="card p-6"
+      initial={{ opacity: 0, y: 18 }}
+      noValidate
+      onSubmit={handleSubmit}
+      transition={{ duration: 0.45, delay: 0.08 }}
+      viewport={{ once: true, amount: 0.2 }}
+      whileInView={{ opacity: 1, y: 0 }}
+    >
       <div className="grid gap-4">
         <div>
           <label className="mb-2 block text-sm font-semibold" htmlFor="name">
             Name
           </label>
           <input
-            className="focus-ring w-full rounded-md border p-3"
+            className="focus-ring w-full rounded-xl border border-[var(--border)] bg-[var(--surface-strong)] p-3"
             id="name"
             name="name"
             placeholder="Your full name"
@@ -42,7 +51,7 @@ export default function ContactForm() {
             Email
           </label>
           <input
-            className="focus-ring w-full rounded-md border p-3"
+            className="focus-ring w-full rounded-xl border border-[var(--border)] bg-[var(--surface-strong)] p-3"
             id="email"
             name="email"
             placeholder="you@example.com"
@@ -55,7 +64,7 @@ export default function ContactForm() {
             Message
           </label>
           <textarea
-            className="focus-ring min-h-36 w-full rounded-md border p-3"
+            className="focus-ring min-h-36 w-full rounded-xl border border-[var(--border)] bg-[var(--surface-strong)] p-3"
             id="message"
             name="message"
             placeholder="Write your message..."
@@ -64,7 +73,7 @@ export default function ContactForm() {
         </div>
       </div>
       <button
-        className="focus-ring mt-5 rounded-md bg-[var(--brand)] px-4 py-2 text-sm font-semibold text-white hover:opacity-90"
+        className="focus-ring btn btn-primary mt-5"
         type="submit"
       >
         Send Message
@@ -80,6 +89,6 @@ export default function ContactForm() {
           Please fill in name, email, and message before submitting.
         </p>
       ) : null}
-    </form>
+    </motion.form>
   );
 }

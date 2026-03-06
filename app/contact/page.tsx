@@ -1,5 +1,6 @@
-﻿import type { Metadata } from "next";
+import type { Metadata } from "next";
 import ContactForm from "@/components/ContactForm";
+import Reveal from "@/components/Reveal";
 
 export const metadata: Metadata = {
   title: "Contact",
@@ -11,14 +12,16 @@ export default function ContactPage() {
   return (
     <section className="section">
       <div className="site-container">
-        <h1 className="section-title">Contact</h1>
-        <p className="section-subtitle">
-          Open to internships, entry-level roles, and collaborative
-          opportunities in product and technology.
-        </p>
+        <Reveal>
+          <h1 className="section-title">Contact</h1>
+          <p className="section-subtitle">
+            Open to internships, entry-level roles, and collaborative
+            opportunities in product and technology.
+          </p>
+        </Reveal>
         <div className="mt-6 grid gap-5 lg:grid-cols-[0.95fr_1.05fr]">
-          <aside className="card p-6">
-            <h2 className="text-lg font-semibold text-[var(--brand)]">
+          <Reveal className="card p-6" delay={0.05}>
+            <h2 className="text-lg font-semibold text-[var(--brand-strong)]">
               Contact Information
             </h2>
             <ul className="mt-4 space-y-3 text-[var(--muted)]">
@@ -56,7 +59,7 @@ export default function ContactPage() {
                 </a>
               </li>
             </ul>
-          </aside>
+          </Reveal>
           <ContactForm />
         </div>
       </div>

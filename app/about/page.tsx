@@ -1,4 +1,5 @@
-﻿import type { Metadata } from "next";
+import type { Metadata } from "next";
+import Reveal from "@/components/Reveal";
 
 export const metadata: Metadata = {
   title: "About",
@@ -10,23 +11,27 @@ export default function AboutPage() {
   return (
     <section className="section">
       <div className="site-container">
-        <h1 className="section-title">About</h1>
-        <p className="section-subtitle">
-          Aspiring product-focused technologist with a Computer Science
-          background and practical experience in web development, automation,
-          and infrastructure support.
-        </p>
+        <Reveal>
+          <h1 className="section-title">About</h1>
+          <p className="section-subtitle">
+            Aspiring product-focused technologist with a Computer Science
+            background and practical experience in web development, automation,
+            and infrastructure support.
+          </p>
+        </Reveal>
 
-        <div className="card mt-6 p-6 md:p-8">
-          <h2 className="text-xl font-semibold text-[var(--brand)]">Profile Summary</h2>
+        <Reveal className="card mt-6 p-6 md:p-8" delay={0.05}>
+          <h2 className="text-xl font-semibold text-[var(--brand-strong)]">
+            Profile Summary
+          </h2>
           <p className="mt-4 text-[var(--muted)]">
             Eager to contribute technical expertise, user empathy, and
             problem-solving to digital product development and improvement.
           </p>
-        </div>
+        </Reveal>
 
-        <div className="card mt-6 p-6 md:p-8">
-          <h2 className="text-xl font-semibold text-[var(--brand)]">Education</h2>
+        <Reveal className="card mt-6 p-6 md:p-8" delay={0.1}>
+          <h2 className="text-xl font-semibold text-[var(--brand-strong)]">Education</h2>
           <ul className="mt-4 space-y-3 text-[var(--muted)]">
             <li>
               <span className="font-semibold text-[var(--text)]">
@@ -47,7 +52,7 @@ export default function AboutPage() {
               4.83
             </li>
           </ul>
-        </div>
+        </Reveal>
       </div>
     </section>
   );
